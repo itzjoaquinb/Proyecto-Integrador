@@ -3,43 +3,29 @@
     padding: 0px;
     margin: 0px;
     background-color: #e6dbc3;
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-header {
+.logo{
+    width: 60%;
+    height: 350px;
+}
+.search-form{
+    margin-left: 85%;
+    margin-top: -8%;
+}
+.nav-list{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f8f8f8;
-    padding: 10px 20px;
+    justify-content: space-around;
+    list-style-type: none;
 }
-
-.logo img {
-    height: 50px;
-}
-
-.search-form {
-    display: flex;
-    gap: 5px;
-}
-
-.search-input {
-    padding: 5px;
-    width: 200px;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.nav-link {
+.nav-list a{
     text-decoration: none;
-    color: #333;
+    color: #797f6f;
 }
-
-footer {
+.title{
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
+    font-weight: 600;
+    color: #616a5c;
 }
