@@ -20,9 +20,16 @@
     justify-content: space-around;
     list-style-type: none;
 }
-.nav-list a{
+.nav-list  a{
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: #797f6f;
+    margin: 15px 0px;
+    color: #919483;
+    background-color: #616a5c;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
 }
 .title{
     text-align: center;
