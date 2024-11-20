@@ -22,12 +22,12 @@ function obtenerRecetas(pagina) {
 function mostrarRecetas(recetas) {
     recetas.forEach(function (receta) {
         const tarjetaReceta = document.createElement('div');
-        tarjetaReceta.classList.add('tarjetaReceta');
+        tarjetaReceta.classList.add('recetaBox');
         tarjetaReceta.innerHTML = `
             <img src="${receta.image}" alt="${receta.title}" class="imagenReceta">
-            <h2 class="recipe-title">${receta.title}</h2>
+            <h2 class="recipe-title">${receta.name}</h2>
             <p class="recipe-difficulty">Dificultad: ${receta.difficulty}</p>
-            <a href="receta.html?id=${receta.id}" class="recipe-link">Ver más</a>
+            <a href="receta.html?id=${receta.id}" class="recipe-link">VER MÁS</a>
         `;
         contenedorRecetas.appendChild(tarjetaReceta);
     });

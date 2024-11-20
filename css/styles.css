@@ -19,6 +19,20 @@
     margin-left: 85%;
     margin-top: -8%;
 }
+.search-input{
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #616a5c;
+    border-style: solid;
+    border-width: 2.5px;
+}
+.search-button{
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #616a5c;
+    border-style: solid;
+    border-width: 2.5px;
+}
 .nav-list{
     display: flex;
     justify-content: space-around;
@@ -29,7 +43,7 @@
     align-items: center;
     text-decoration: none;
     margin: 15px 0px;
-    color: #919483;
+    color: #a9a997;
     background-color: #616a5c;
     border-radius: 20px;
     font-size: 20px;
@@ -43,6 +57,50 @@
 .contenedorRecetas{
     display: flex;
     flex-wrap: wrap;
-    width: 45%;
+    margin: 20px;
+    justify-content: center;   
+}
+.recetaBox {
+    flex: 1 1 calc(33.333% - 40px); /* Tres elementos por fila */
+    max-width: calc(33.333% - 40px); /* Asegura el ancho */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px;
+}
+.recetaBox img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.recetaBox h2 {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.recetaBox p {
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.recetaBox a{
+    text-decoration: none;
+    color: #a9a997;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 10px;
+}
+.botonCargarMas{
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+.cargarMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /******************************************   XXXXXX   ************************************************/
