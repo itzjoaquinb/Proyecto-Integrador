@@ -40,5 +40,9 @@
     font-weight: 600;
     color: #616a5c;
 }
-
+.contenedorRecetas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+}
 /******************************************   XXXXXX   ************************************************/
