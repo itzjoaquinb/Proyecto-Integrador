@@ -6,9 +6,24 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="body-form">
         
-
+    <form method="get" class="registroForm" action="index.html">
+        <div class="form">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" class="form-control">
+            <div class="invalid-feedback email"></div>
+        </div>
+        <div class="form">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" class="form-control">
+            <div class="invalid-feedback password"></div>
+        </div>
+        <div>
+            <a href="./register.html">No tengo cuenta</a>
+        </div>
+        <button type="submit" class="btn btn-success">ENVIAR</button>
+    </form>
 
     <script src="./js/login.js"></script>
 
