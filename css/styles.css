@@ -103,4 +103,28 @@
     justify-content: center;
     align-items: center;
 }
-/******************************************   XXXXXX   ************************************************/
+/******************************************   PÁGINA RECETA   ************************************************/
+
+#nombreReceta{
+    text-align: center;
+    margin: 20px;
+}
+#fotoReceta{
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+}
+#detalleReceta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#detalleReceta p{
+    margin: 20px;
+    max-width: 50%;
+    text-align: center;
+}
+#detalleReceta h2{
+    margin: 20px;
+}

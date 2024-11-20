@@ -3,7 +3,6 @@ const botonCargarMas = document.getElementById('botonCargarMas');
 let paginaActual = 0;
 const recetasPorPagina = 10;
 
-// Función para obtener recetas de la API
 function obtenerRecetas(pagina) {
     return fetch(`https://dummyjson.com/recipes?limit=${recetasPorPagina}&skip=${pagina * recetasPorPagina}`)
         .then(function (respuesta) {
@@ -18,7 +17,6 @@ function obtenerRecetas(pagina) {
         });
 }
 
-// Función para mostrar recetas en la página
 function mostrarRecetas(recetas) {
     recetas.forEach(function (receta) {
         const tarjetaReceta = document.createElement('div');
