@@ -159,7 +159,7 @@
 /******************************************   CATEGORIES   ************************************************/
 
 .categoriaBox {
-    background-color: #f0f0f0;
+    background-color: #ece1e1;
     padding: 15px;
     margin: 10px;
     border-radius: 8px;
@@ -204,4 +204,17 @@
     text-decoration: none;
     font-weight: bold;
     color: #007bff;
+}
+.contenedorCategorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.categoriaBox a{
+    background-color: #a9a997;
+    padding: 5px;
+    border-radius: 5px;
+}
+.h1-c{
+    text-align: center;
 }
