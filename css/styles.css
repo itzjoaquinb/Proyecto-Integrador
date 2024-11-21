@@ -143,66 +143,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 10px;
+    padding: 100px 10px;
     max-width: 400px;
     width: 100%;
     background-color: #616a5c;
     border-radius: 20px;
 }
 .registroForm div{
-    margin: 10px;
+    margin: 20px;
     background-color: #616a5c;
     display: flex;
     flex-direction: column;
-}
-
-/******************************************   CATEGORIES   ************************************************/
-
-.categoriaBox {
-    background-color: #f0f0f0;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.categoriaLink {
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
-}
-
-/******************************************   CATEGORY   ************************************************/
-
-.recetaBox {
-    background-color: #ffffff;
-    padding: 15px;
-    margin: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.imagenReceta {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.recipe-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.recipe-difficulty {
-    font-size: 14px;
-    color: #666;
-}
-
-.recipe-link {
-    text-decoration: none;
-    font-weight: bold;
-    color: #007bff;
 }
