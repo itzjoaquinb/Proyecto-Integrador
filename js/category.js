@@ -1,44 +1,32 @@
-let contenedorRecetas = document.getElementById('contenedorRecetas');
-let url = window.location.search; 
-let params = new URLSearchParams(url);
-let categoriaSeleccionada = params.get('category');
+let queryString = location.search
+let queryStringObj = new URLSearchParams(queryString);
+let categoryName = queryStringObj.get('tag');
 
-if (!categoriaSeleccionada) {
-    console.error('No se proporcionó una categoría válida.');
-} else {
-    let tituloCategoria = document.getElementById('tituloCategoria');
-    tituloCategoria.textContent = `Recetas de la categoría: ${categoriaSeleccionada}`;
 
-    function obtenerRecetasPorCategoria() {
-        return fetch(`https://dummyjson.com/recipes/tag/${categoriaSeleccionada}`)
-            .then(function (respuesta) {
-                return respuesta.json();
-            })
-            .then(function (datos) {
-                return datos.recipes || []; 
-            })
-            .catch(function (error) {
-                console.error('Error al obtener recetas por categoría:', error);
-                return [];
-            });
-    }
+fetch(`https://dummyjson.com/recipes`)
+    .then(function (response) {
+        return response.json(); 
+    })
+    .then(function (data) {
+        let lista = document.querySelector(".contenedorRecetas")
+        let titulo = document.querySelector("#tituloCategoria")
+        titulo.innerHTML = `${categoryName}`
+        let recetas = []
 
-    function mostrarRecetas(recetas) {
-        recetas.forEach(function (receta) {
-            let tarjetaReceta = document.createElement('div');
-            tarjetaReceta.classList.add('recetaBox');
-            tarjetaReceta.innerHTML = `
-                <img src="${receta.image}" alt="${receta.title}" class="imagenReceta">
-                <h2 class="recipe-title">${receta.name}</h2>
-                <p class="recipe-difficulty">Dificultad: ${receta.difficulty}</p>
-                <a href="receta.html?id=${receta.id}" class="recipe-link">VER MÁS</a>
+        for (let i = 0; i < data.recipies.length; i++) {
+            let receta = recetas[i];
+            let recetaElemento = document.createElement('div');
+            recetaElemento.classList.add('receta');
+            recetaElemento.innerHTML = `
+                <img src="${receta.image}" alt="Imagen de ${receta.title}">
+                <h3>${receta.name}</h3>
+                <p>Dificultad: ${receta.difficulty}</p>
+                <a href="./receta.html?id=${receta.id}">Ver más</a>
             `;
-            contenedorRecetas.appendChild(tarjetaReceta);
-        });
-    }
-
-    obtenerRecetasPorCategoria().then(function (recetas) {
-        mostrarRecetas(recetas);
+            recetasContainer.appendChild(recetaElemento);
+        }
+    })
+    .catch(function (error) {
+        console.error('Error al obtener las recetas:', error);
     });
-}
 
