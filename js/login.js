@@ -1,16 +1,17 @@
-let registroForm = document.querySelector("#registroForm")
-console.log()
+let registroForm = document.querySelector(".registroForm")
+let correoElectronico = document.querySelector("#email")
+let contraseña = document.querySelector("#password")
 registroForm.addEventListener("submit", function(event){
-  let correoElectrónico = document.querySelector("#correoElectrónico")
-  let contraseña = document.querySelector("#contraseña")
+  event.preventDefault()
 
-  if (correoElectrónico.value == ""){
-    event.preventDefault();
+  if (correoElectronico.value == ""){
     alert("Por favor, complete el campo de correo electrónico");
   }
 
   else if (contraseña.value == ""){
-    event.preventDefault();
     alert("Por favor, complete el campo de contraseña")
   }
-});
+  else{
+    registroForm.submit()
+  }
+})  
