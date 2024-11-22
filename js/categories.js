@@ -13,7 +13,7 @@ function obtenerCategorias() {
             return [];
         });
 }
-console.log()
+
 function mostrarCategorias(categorias) {
     categorias.forEach(function (categoria) {
         const tarjetaCategoria = document.createElement('div');
