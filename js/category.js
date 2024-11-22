@@ -12,20 +12,17 @@ fetch(`https://dummyjson.com/recipes`)
         titulo.innerHTML = `${categoryName}`
         let recetas = ''
 
-        data.recipes.forEach(receta => {
-            if (receta.tags.includes(categoryName)){
-                recetas += `
-                <div class="receta">
-                    <img src="${receta.image}" alt="Imagen de ${receta.name}">
-                    <h3>${receta.name}</h3>
-                    <p>Dificultad: ${receta.difficulty}</p>
-                    <a href="./receta.html?id=${receta.id}">Ver más</a>
-                </div>`
-            }
-        });
-
+        for (let i = 0; i < data.recipes.length; i++) {
+            recetas += `
+            <div class="receta">
+                <img src="${data.recipes[i].image}" alt="Imagen de ${data.recipes[i].name}">
+                <h3>${data.recipes[i].name}</h3>
+                <p>Dificultad: ${data.recipes[i].difficulty}</p>
+                <a href="./receta.html?id=${data.recipes[i].id}">Ver más</a>
+            </div>`
+        }
         lista.innerHTML = recetas;
     })
     .catch(function (error) {
-        console.error('Error al obtener las recetas:', error);
+        console.error('Errorsito:', error);
     });
