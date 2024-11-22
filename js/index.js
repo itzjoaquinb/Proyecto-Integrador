@@ -31,7 +31,6 @@ function mostrarRecetas(recetas) {
     });
 }
 
-// Función para cargar recetas
 function cargarRecetas() {
     obtenerRecetas(paginaActual).then(function (recetas) {
         mostrarRecetas(recetas);
@@ -39,8 +38,6 @@ function cargarRecetas() {
     });
 }
 
-// Evento para cargar más recetas
 botonCargarMas.addEventListener('click', cargarRecetas);
 
-// Cargar las primeras recetas al inicio
 cargarRecetas();

@@ -1,7 +1,6 @@
 let queryString = location.search
 let queryStringObj = new URLSearchParams(queryString);
-let categoryName = queryStringObj.get('tag');
-
+let categoryName = queryStringObj.get('category');
 
 fetch(`https://dummyjson.com/recipes`)
     .then(function (response) {
@@ -11,22 +10,22 @@ fetch(`https://dummyjson.com/recipes`)
         let lista = document.querySelector("#contenedorRecetas")
         let titulo = document.querySelector("#tituloCategoria")
         titulo.innerHTML = `${categoryName}`
-        let recetas = []
+        let recetas = ''
 
-        for (let i = 0; i < data.recipes.length; i++) {
-            if (data.recipes[i].tags.includes(categoryName)){
+        data.recipes.forEach(receta => {
+            if (receta.tags.includes(categoryName)){
                 recetas += `
-                <img src="${receta.image}" alt="Imagen de ${receta.title}">
-                <h3>${receta.name}</h3>
-                <p>Dificultad: ${receta.difficulty}</p>
-                <a href="./receta.html?id=${receta.id}">Ver más</a>`
-
+                <div class="receta">
+                    <img src="${receta.image}" alt="Imagen de ${receta.name}">
+                    <h3>${receta.name}</h3>
+                    <p>Dificultad: ${receta.difficulty}</p>
+                    <a href="./receta.html?id=${receta.id}">Ver más</a>
+                </div>`
             }
-            lista.innerHTML=recetas;
+        });
 
-        }
+        lista.innerHTML = recetas;
     })
     .catch(function (error) {
         console.error('Error al obtener las recetas:', error);
     });
-
