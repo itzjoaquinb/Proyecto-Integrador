@@ -62,9 +62,8 @@ body{
     margin: 20px;
     justify-content: center;   
 }
-.recetaBox {
-    flex: 1 1 calc(33.333% - 40px); /* Tres elementos por fila */
-    max-width: calc(33.333% - 40px); /* Asegura el ancho */
+.receta {
+    max-width: 30%; 
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #ccc;
@@ -73,27 +72,28 @@ body{
     text-align: center;
     margin: 20px;
 }
-.recetaBox img {
+.receta img {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.recetaBox h2 {
+.receta h2 {
     margin: 10px 0;
     border-radius: 5px;
 }
 
-.recetaBox p {
+.receta p {
     margin: 5px 0;
     border-radius: 5px;
 }
-.recetaBox a{
+.receta a{
     text-decoration: none;
-    color: #a9a997;
+    background-color: #a9a997;
     border-radius: 5px;
-    padding: 4px;
+    padding: 4px 10px;
     font-size: 10px;
+    color: #616a5c;
 }
 .botonCargarMas{
     border-radius: 5px;
