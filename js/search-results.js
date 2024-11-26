@@ -7,8 +7,8 @@ fetch('https://dummyjson.com/recipes')
         return response.json(); 
     })
     .then(function (data) {
-        let lista = document.querySelector("#searchResults")
-        let titulo = document.querySelector("#searchTitle")
+        let lista = document.querySelector("#contenedorRecetas")
+        let titulo = document.querySelector("#tituloCategoria")
         titulo.innerHTML = `Resultados de búsqueda para: ${searchTerm}`
         let recetas = ''
 
