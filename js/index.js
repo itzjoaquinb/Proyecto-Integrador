@@ -1,7 +1,7 @@
 let lista = document.querySelector("#contenedorRecetas");
 let botonCargarMas = document.querySelector("#botonCargarMas");
 let paginaActual = 0;
-let recetasPorPagina = 10;
+let recetasPorPagina = 12;
 
 
 function cargarRecetas() {
