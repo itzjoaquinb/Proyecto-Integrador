@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados de Búsqueda</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <img src="./img/Imagen-Logo.jpeg" alt="Logo" class="logo">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="categories.html">CATEGORÍAS</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="register.html">REGISTRO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="tituloCategoria" class="title"></h1>
         
-    <div id="contenedorResultados"></div>
-    <h2 id="tituloBusqueda"></h2>
+        <section id="contenedorRecetas" class="contenedorRecetas">
+        </section>
+    </main>
 
-
-    <script src="./js/search-results.js"></script>
-
+    <script src="search-results.js"></script>
 </body>
 </html>

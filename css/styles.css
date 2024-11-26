@@ -221,3 +221,20 @@ body{
     text-align: center;
     margin: 30px;
 }
+
+
+.no-results, .error {
+    width: 100%;
+    text-align: center;
+    color: #616a5c;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.error {
+    color: #ff0000;
+    background-color: #ffeeee;
+}
