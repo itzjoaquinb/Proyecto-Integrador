@@ -138,33 +138,98 @@ body{
     margin: 20px;
 }
 
-/******************************************   REGISTRO   ************************************************/
-.body-form{
+/******************************************   REGISTRO Y LOGIN   ************************************************/
+.body-form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    
+    background-color: #f4f1e4;
 }
-.registroForm{
+
+.registroForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 10px;
+    padding: 60px 40px;
     max-width: 400px;
     width: 100%;
     background-color: #616a5c;
     border-radius: 20px;
-}
-.registroForm div{
-    margin: 20px;
-    background-color: #616a5c;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
+.registroForm:hover {
+    transform: scale(1.02);
+}
+
+.registroForm div {
+    margin: 15px 0;
+    width: 100%;
+    position: relative;
+}
+
+.registroForm input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #a9a997;
+    border-radius: 8px;
+    background-color: #e6dbc3;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.registroForm input:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.invalid-feedback {
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.registroForm div a {
+    color: #a9a997;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.registroForm div a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+ 
+.registroForm button {
+    background-color: #a9a997;
+    color: #616a5c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registroForm button:hover {
+    background-color: #ffffff;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    color: #a9a997;
+}
+
+.form-check input{
+    margin-right: 10px;
+    width: auto;
+}
 /******************************************   CATEGORIES   ************************************************/
 
 .categoriaBox {
