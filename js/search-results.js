@@ -16,9 +16,9 @@ fetch('https://dummyjson.com/recipes')
             let terminoBusqueda = searchTerm.toLowerCase();
             let nombreReceta = data.recipes[i].name.toLowerCase();
             
+            
             if (nombreReceta.includes(terminoBusqueda)) {
-                recetas += `
-                <div class="receta">
+                recetas += `    <div class="receta">
                     <img src="${data.recipes[i].image}" alt="Imagen de ${data.recipes[i].name}">
                     <h3>${data.recipes[i].name}</h3>
                     <p>Dificultad: ${data.recipes[i].difficulty}</p>
