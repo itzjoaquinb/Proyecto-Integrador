@@ -141,10 +141,12 @@ body{
 /******************************************   REGISTRO Y LOGIN   ************************************************/
 .body-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f4f1e4;
+    margin: 0;
 }
 
 .registroForm {
@@ -153,16 +155,10 @@ body{
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
-    max-width: 400px;
-    width: 100%;
+    width: 30%;
     background-color: #616a5c;
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.registroForm:hover {
-    transform: scale(1.02);
 }
 
 .registroForm div {
@@ -178,7 +174,6 @@ body{
     border-radius: 8px;
     background-color: #e6dbc3;
     color: #333;
-    transition: all 0.3s ease;
 }
 
 .registroForm input:focus {
@@ -197,12 +192,10 @@ body{
 .registroForm div a {
     color: #a9a997;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .registroForm div a:hover {
     color: #ffffff;
-    text-decoration: underline;
 }
 
  
@@ -212,8 +205,6 @@ body{
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .registroForm button:hover {
@@ -351,5 +342,8 @@ body{
     .search-form{
         margin-left: 65%;
         margin-top: -4%;
+    }
+    .registroForm{
+        width: 75%;
     }
 }
