@@ -8,4 +8,4 @@ Usamos HTML para crear la base general de las distintas páginas. Luego usamos C
 
 Usamos JS para poder crear la opción del botón de "Cargar Más", para crear un buscador funcional, separar las diferentes recetas por categorías entre otras funciones más. 
 
-Los detalles acerca del proyecto realziado es mucho más complejo pero esto fue muy resumido lo que fuimos haciendo en este proyecto integrador.
+Los detalles acerca del proyecto realizado es mucho más complejo pero esto fue muy resumido lo que fuimos haciendo durante este proyecto integrador.
