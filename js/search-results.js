@@ -13,6 +13,7 @@ fetch(`https://dummyjson.com/recipes/search?q=${searchTerm}`)
         let recetas = data.recipes;
         let titulo = document.querySelector("#tituloCategoria")
         titulo.innerHTML = `Resultados de búsqueda para: ${searchTerm}`
+    
 
         if (recetas.length == 0) {
             containerRecetas.innerHTML = ` 
