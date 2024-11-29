@@ -1,27 +1,21 @@
-let contenedorCategorias = document.querySelector('#contenedorCategorias');
+let contenedorCategorias = document.querySelector('.contenedorCategorias');
 
-function obtenerCategorias() {
     fetch('https://dummyjson.com/recipes/tags')
-        .then(function (respuesta) {
-            return respuesta.json();
+        .then(function (response) {
+            return response.json();
         })
-        .then(function (categorias) {
-            for (let i = 0; i < categorias.length; i++) {
-                let tarjetaCategoria = document.createElement('div');
-                tarjetaCategoria.classList.add('categoriaBox');
-                
-                tarjetaCategoria.innerHTML = `
-                    <a href="category.html?category=${categorias[i]}" class="categoriaLink">
-                        ${categorias[i]}
+        .then(function (data) {
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {   
+                contenedorCategorias.innerHTML += `
+                <div class="categoriaBox">
+                    <a href="category.html?category=${data[i]}" class="categoriaLink">
+                        ${data[i]}
                     </a>
-                `;
-                
-                contenedorCategorias.appendChild(tarjetaCategoria);
+                    </div>
+                `; 
             }
         })
         .catch(function (error) {
             console.log('Ocurrió un error: ', error);
         });
-}
-
-obtenerCategorias();

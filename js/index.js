@@ -1,36 +1,53 @@
-let lista = document.querySelector("#contenedorRecetas");
-let botonCargarMas = document.querySelector("#botonCargarMas");
-let paginaActual = 0;
-let recetasPorPagina = 12;
 
-
-function cargarRecetas() {
-    fetch(`https://dummyjson.com/recipes?limit=${recetasPorPagina}&skip=${paginaActual * recetasPorPagina}`)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            let recetas = '';
-
-            for (let i = 0; i < data.recipes.length; i++) {
-                recetas += `
+fetch('https://dummyjson.com/recipes')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        let lista = document.querySelector('#contenedorRecetas');
+        let recetas = '';
+        for (let i = 0; i < 10; i++) {
+            let receta = `
                 <div class="receta">
                     <img src="${data.recipes[i].image}" alt="Imagen de ${data.recipes[i].name}">
                     <h3>${data.recipes[i].name}</h3>
                     <p>Dificultad: ${data.recipes[i].difficulty}</p>
                     <a href="./receta.html?id=${data.recipes[i].id}">Ver más</a>
                 </div>`;
+            recetas += receta;
+        }
+        lista.innerHTML = recetas;
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+
+let cargarMas = document.querySelector('#botonCargarMas');
+let recetasPorPagina = 10;
+
+cargarMas.addEventListener('click', function () {
+    fetch(`https://dummyjson.com/recipes?limit=${recetasPorPagina}`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            let lista = document.querySelector('#contenedorRecetas');
+            let recetas = '';
+            for (let i = 0; i < data.recipes.length; i++) {
+                let receta = `
+                    <div class="receta">
+                        <img src="${data.recipes[i].image}" alt="Imagen de ${data.recipes[i].name}">
+                        <h3>${data.recipes[i].name}</h3>
+                        <p>Dificultad: ${data.recipes[i].difficulty}</p>
+                        <a href="./receta.html?id=${data.recipes[i].id}">Ver más</a>
+                    </div>`;
+                recetas += receta;
             }
-
-            lista.innerHTML += recetas;
-
-            paginaActual++;
+            lista.innerHTML = recetas;
         })
         .catch(function (error) {
-            console.error('Error al cargar las recetas:', error);
+            console.error(error);
         });
-}
 
-botonCargarMas.addEventListener('click', cargarRecetas);
-
-cargarRecetas();
+    recetasPorPagina += 10;
+});

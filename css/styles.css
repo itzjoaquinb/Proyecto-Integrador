@@ -164,7 +164,6 @@ body{
 .registroForm div {
     margin: 15px 0;
     width: 100%;
-    position: relative;
 }
 
 .registroForm input {
@@ -174,12 +173,6 @@ body{
     border-radius: 8px;
     background-color: #e6dbc3;
     color: #333;
-}
-
-.registroForm input:focus {
-    outline: none;
-    border-color: #ffffff;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .invalid-feedback {

@@ -27,7 +27,7 @@ fetch('https://dummyjson.com/recipes')
             }
         }
 
-        if (recetas === '') {
+        if (recetas == '') {
             lista.innerHTML = `
             <div class="receta">
                 <p>Lo sentimos, no se encontraron recetas que coincidan con "${searchTerm}".</p>

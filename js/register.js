@@ -6,8 +6,8 @@ let errorPassword = document.querySelector(".password")
 
 
 
-formulario.addEventListener('submit', function(evento){
-    evento.preventDefault()
+formulario.addEventListener('submit', function(event){
+    event.preventDefault()
     if(email.value == ''){
         console.log('completa el campo')
         errorEmail.innerHTML = '<p>Completa el campo</p>'

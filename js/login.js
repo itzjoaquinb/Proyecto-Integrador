@@ -1,6 +1,7 @@
 let registroForm = document.querySelector(".registroForm")
 let correoElectronico = document.querySelector("#email")
 let contraseña = document.querySelector("#password")
+
 registroForm.addEventListener("submit", function(event){
   event.preventDefault()
 
