@@ -1,41 +1,36 @@
-let queryString = location.search
+let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let searchTerm = queryStringObj.get('search');
 
-fetch('https://dummyjson.com/recipes')
+let containerRecetas = document.querySelector('#contenedorRecetas');
+
+fetch(`https://dummyjson.com/recipes/search?q=${searchTerm}`)
     .then(function (response) {
-        return response.json(); 
+        return response.json();
     })
     .then(function (data) {
-        let lista = document.querySelector("#contenedorRecetas")
+        console.log(data);
+        let recetas = data.recipes;
         let titulo = document.querySelector("#tituloCategoria")
         titulo.innerHTML = `Resultados de búsqueda para: ${searchTerm}`
-        let recetas = ''
 
-        for (let i = 0; i < data.recipes.length; i++) {
-            let terminoBusqueda = searchTerm.toLowerCase();
-            let nombreReceta = data.recipes[i].name.toLowerCase();
-            
-            
-            if (nombreReceta.includes(terminoBusqueda)) {
-                recetas += `    <div class="receta">
-                    <img src="${data.recipes[i].image}" alt="Imagen de ${data.recipes[i].name}">
-                    <h3>${data.recipes[i].name}</h3>
-                    <p>Dificultad: ${data.recipes[i].difficulty}</p>
-                    <a href="./receta.html?id=${data.recipes[i].id}">Ver más</a>
-                </div>`
-            }
-        }
-
-        if (recetas == '') {
-            lista.innerHTML = `
-            <div class="receta">
-                <p>Lo sentimos, no se encontraron recetas que coincidan con "${searchTerm}".</p>
-            </div>`
+        if (recetas.length == 0) {
+            containerRecetas.innerHTML = ` 
+                <div class="receta">
+                    <p>Lo sentimos, no se encontraron recetas que coincidan con "${searchTerm}".</p>
+                </div>`;
         } else {
-            lista.innerHTML = recetas;
+            for (let i = 0; i < recetas.length; i++) {
+                containerRecetas.innerHTML += `
+                   <div class="receta">
+                       <img src="${recetas[i].image}" alt="Imagen de ${recetas[i].name}">
+                       <h3>${recetas[i].name}</h3>
+                       <p>Dificultad: ${recetas[i].difficulty}</p>
+                       <a href="./receta.html?id=${recetas[i].id}">Ver más</a>
+                   </div>`;
+            }
         }
     })
     .catch(function (error) {
-        console.error('Errorsito:', error);
+        console.log("Error cargando recetas:", error);
     });
