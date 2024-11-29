@@ -137,7 +137,10 @@ body{
 #detalleReceta h2{
     margin: 20px;
 }
-
+.recetaTags{
+    text-decoration: none;
+    color: #a9a997;
+}
 /******************************************   REGISTRO Y LOGIN   ************************************************/
 .body-form {
     display: flex;

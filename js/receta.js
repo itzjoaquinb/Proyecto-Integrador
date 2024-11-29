@@ -19,7 +19,14 @@ let recetaId = queryStringObj.get('id');
             let instrucciones = document.querySelector('#instruccionesReceta');
             instrucciones.innerText = data.instructions 
             let categorias = document.querySelector('#categoriasReceta');
-            categorias.innerText = data.tags 
+            let tagsHTML = '';
+            for (let i = 0; i < data.tags.length; i++) {
+                tagsHTML += `
+                    <a href="category.html?category=${data.tags[i]}" class="recetaTags">
+                        ${data.tags[i]}
+                    </a>`;
+            }
+            categorias.innerHTML = tagsHTML;
         })
         .catch(function(error) {
             console.error('Error al obtener los detalles de la receta:', error);
